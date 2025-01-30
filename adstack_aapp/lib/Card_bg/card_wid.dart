@@ -19,10 +19,19 @@ class CardWid extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
+            "ETHEREUM 2.0",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(
             "Top Rating Project",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
           ),

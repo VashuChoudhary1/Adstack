@@ -25,7 +25,7 @@ class GraphCard extends StatelessWidget {
             ),
             SizedBox(height: 10),
             SizedBox(
-              height: 100, // Graph height
+              height: 120, // Graph height
               child: LineChart(
                 LineChartData(
                   gridData: FlGridData(show: false), // Hide grid
