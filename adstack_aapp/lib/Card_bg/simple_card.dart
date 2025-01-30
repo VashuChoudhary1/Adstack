@@ -4,7 +4,8 @@ class SimpleCard extends StatelessWidget {
   final String title;
   final Color bgColor;
 
-  SimpleCard({
+  const SimpleCard({
+    super.key,
     required this.title,
     required this.bgColor,
   });

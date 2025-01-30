@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TopCreatorCard extends StatelessWidget {
+  const TopCreatorCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> creatorList = List.generate(
@@ -63,6 +65,8 @@ class TopCreatorCard extends StatelessWidget {
 }
 
 class CreatorItem extends StatelessWidget {
+  const CreatorItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(

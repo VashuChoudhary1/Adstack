@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CardWid extends StatelessWidget {
+  const CardWid({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Colors.purple,
         borderRadius: BorderRadius.circular(20.0),
+        gradient: LinearGradient(
+          colors: [Color(0xFF7F3CFF), Color(0xFFFF66C4)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

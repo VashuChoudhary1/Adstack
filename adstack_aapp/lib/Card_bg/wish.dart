@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WishCard extends StatelessWidget {
+  const WishCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

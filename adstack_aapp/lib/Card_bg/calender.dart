@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CalendarCard extends StatefulWidget {
+  const CalendarCard({super.key});
+
   @override
   _CalendarCardState createState() => _CalendarCardState();
 }
 
 class _CalendarCardState extends State<CalendarCard> {
   DateTime _selectedDay = DateTime.now();
-  CalendarFormat _calendarFormat = CalendarFormat.month;
+  final CalendarFormat _calendarFormat = CalendarFormat.month;
 
   @override
   Widget build(BuildContext context) {

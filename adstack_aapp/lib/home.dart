@@ -1,4 +1,4 @@
-import 'package:adstack_aapp/Card_bg/AllPrj_card.dart';
+import 'package:adstack_aapp/Card_bg/allPrj_card.dart';
 import 'package:adstack_aapp/Card_bg/calender.dart';
 import 'package:adstack_aapp/Card_bg/card_wid.dart';
 import 'package:adstack_aapp/Card_bg/graph_card.dart';
@@ -8,6 +8,8 @@ import 'package:adstack_aapp/Card_bg/wish.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class HomePage extends StatelessWidget {
                           flex: 2, // Takes 2 parts of the screen
                           child: Column(
                             children: [
-                              Container(
+                              SizedBox(
                                 width: 900,
                                 height: 250,
                                 child: CardWid(),
@@ -43,7 +45,7 @@ class HomePage extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     flex: 1,
-                                    child: Container(
+                                    child: SizedBox(
                                       height: 250,
                                       child: AllprjCard(),
                                     ),
@@ -51,7 +53,7 @@ class HomePage extends StatelessWidget {
                                   SizedBox(width: 10),
                                   Expanded(
                                     flex: 1,
-                                    child: Container(
+                                    child: SizedBox(
                                       height: 250,
                                       child: TopCreatorCard(),
                                     ),
@@ -59,7 +61,7 @@ class HomePage extends StatelessWidget {
                                 ],
                               ),
                               SizedBox(height: 10),
-                              Container(
+                              SizedBox(
                                   width: 900, height: 250, child: GraphCard()),
                             ],
                           ),
@@ -129,20 +131,26 @@ class HomePage extends StatelessWidget {
 }
 
 class TopNavBar extends StatelessWidget {
+  const TopNavBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text("Home", style: TextStyle(color: Colors.blueGrey, fontSize: 20)),
         SizedBox(width: 800),
-        Container(
+        SizedBox(
           width: 300,
           child: TextField(
             decoration: InputDecoration(
-              suffixIcon: Icon(Icons.search),
+              suffixIcon: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
               hintText: "Search...",
+              hintStyle: TextStyle(color: Colors.white),
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Colors.black,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: BorderSide.none,
@@ -158,9 +166,7 @@ class TopNavBar extends StatelessWidget {
         Icon(Icons.exit_to_app, size: 28, color: Colors.black),
         SizedBox(width: 15),
         CircleAvatar(
-          backgroundColor: Colors.black,
-          radius: 12,
-        ),
+            radius: 20, backgroundImage: AssetImage("assets/profile_icon.jpg"))
       ],
     );
   }

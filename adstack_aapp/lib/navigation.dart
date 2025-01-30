@@ -6,6 +6,8 @@ import 'package:adstack_aapp/summary.dart';
 import 'package:flutter/material.dart';
 
 class NavigationSidebar extends StatelessWidget {
+  const NavigationSidebar({super.key});
+
   void _navigateToPage(BuildContext context, Widget page) {
     Navigator.push(
       context,
@@ -22,25 +24,51 @@ class NavigationSidebar extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "LOGO",
-            style: TextStyle(fontSize: 20),
+          Center(
+            child: Image.asset(
+              "assets/icon.png",
+              height: 110,
+              width: 130,
+              fit: BoxFit.cover,
+            ),
           ),
           Divider(),
-          Center(child: CircleAvatar(radius: 40, backgroundColor: Colors.grey)),
+          Center(
+              child: Container(
+                  padding: EdgeInsets.all(4), // Border thickness
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.orange, width: 4),
+                  ),
+                  child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage("assets/profile_icon.jpg")))),
           SizedBox(height: 20),
           Center(
             child: Text(
               "Vashu Choudhary",
-              style: TextStyle(color: Colors.black, fontSize: 15),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
             ),
           ),
+          SizedBox(height: 5),
           Center(
             child: Container(
-              width: 60,
+              width: 80,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20), color: Colors.blue),
-              child: Text("Action"),
+                borderRadius: BorderRadius.circular(20),
+                shape: BoxShape.rectangle,
+                border: Border.all(color: Colors.purple, width: 2),
+              ),
+              child: Center(
+                child: Text("Admin",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15)),
+              ),
             ),
           ),
           SizedBox(height: 20),
@@ -49,8 +77,15 @@ class NavigationSidebar extends StatelessWidget {
           _buildNavItem("Employees", Icons.people, context, EmployeesPage()),
           _buildNavItem(
               "Attendance", Icons.access_time, context, AttendancePage()),
-          _buildNavItem("Summary", Icons.insert_chart, context, SummaryPage()),
-          _buildNavItem("Information", Icons.info, context, InformationPage()),
+          _buildNavItem(
+              "Summary", Icons.calendar_month, context, SummaryPage()),
+          _buildNavItem("Information", Icons.info_outline_rounded, context,
+              InformationPage()),
+          Text(
+            "WORKSPACES  + ",
+            style: TextStyle(
+                color: Colors.black, fontSize: 19, fontWeight: FontWeight.bold),
+          ),
           Spacer(),
           Divider(),
           _buildNavItem("Settings", Icons.settings, context, HomePage()),
@@ -63,8 +98,10 @@ class NavigationSidebar extends StatelessWidget {
   Widget _buildNavItem(
       String title, IconData icon, BuildContext context, Widget page) {
     return ListTile(
-      leading: Icon(icon, size: 24, color: Colors.black54), // Sidebar Icon
-      title: Text(title, style: TextStyle(fontSize: 16)),
+      leading: Icon(icon, size: 24, color: Colors.black), // Sidebar Icon
+      title: Text(title,
+          style: TextStyle(
+              fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold)),
       onTap: () => _navigateToPage(context, page),
     );
   }

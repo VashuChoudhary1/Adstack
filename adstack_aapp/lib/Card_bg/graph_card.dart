@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class GraphCard extends StatelessWidget {
+  const GraphCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,7 +24,7 @@ class GraphCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            Container(
+            SizedBox(
               height: 100, // Graph height
               child: LineChart(
                 LineChartData(

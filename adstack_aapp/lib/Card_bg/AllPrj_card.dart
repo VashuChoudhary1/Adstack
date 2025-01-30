@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AllprjCard extends StatelessWidget {
+  const AllprjCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     final List<Widget> projectList = List.generate(
@@ -43,6 +45,8 @@ class AllprjCard extends StatelessWidget {
 }
 
 class ProjectItem extends StatelessWidget {
+  const ProjectItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
