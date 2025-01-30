@@ -1,6 +1,9 @@
+import 'package:adstack_aapp/Card_bg/AllPrj_card.dart';
 import 'package:adstack_aapp/Card_bg/calender.dart';
 import 'package:adstack_aapp/Card_bg/card_wid.dart';
+import 'package:adstack_aapp/Card_bg/graph_card.dart';
 import 'package:adstack_aapp/Card_bg/simple_card.dart';
+import 'package:adstack_aapp/Card_bg/top_creator_card.dart';
 import 'package:adstack_aapp/Card_bg/wish.dart';
 import 'package:flutter/material.dart';
 
@@ -33,45 +36,7 @@ class HomePage extends StatelessWidget {
                               Container(
                                 width: 900,
                                 height: 250,
-                                child: CardWid(
-                                  title: "Top Rating Project",
-                                  bgColor: Colors.purple,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text("Trending project and high rating ",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 15,
-                                          )),
-                                      Text(
-                                        "Project Created by team.",
-                                        style: TextStyle(
-                                            color: Colors.white, fontSize: 15),
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Container(
-                                        height: 50,
-                                        width: 120,
-                                        decoration: BoxDecoration(
-                                            color: const Color.fromARGB(
-                                                255, 1, 21, 54),
-                                            borderRadius:
-                                                BorderRadius.circular(12)),
-                                        child: Center(
-                                          child: Text(
-                                            "Learn More.",
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                                child: CardWid(),
                               ),
                               SizedBox(height: 20),
                               Row(
@@ -80,10 +45,7 @@ class HomePage extends StatelessWidget {
                                     flex: 1,
                                     child: Container(
                                       height: 250,
-                                      child: SimpleCard(
-                                        title: "All Project",
-                                        bgColor: Colors.indigoAccent,
-                                      ),
+                                      child: AllprjCard(),
                                     ),
                                   ),
                                   SizedBox(width: 10),
@@ -91,23 +53,14 @@ class HomePage extends StatelessWidget {
                                     flex: 1,
                                     child: Container(
                                       height: 250,
-                                      child: SimpleCard(
-                                        title: "Top Creators",
-                                        bgColor: Colors.indigoAccent,
-                                      ),
+                                      child: TopCreatorCard(),
                                     ),
                                   ),
                                 ],
                               ),
                               SizedBox(height: 10),
                               Container(
-                                width: 900,
-                                height: 250,
-                                child: SimpleCard(
-                                  title: "Top Rating Project",
-                                  bgColor: Colors.white,
-                                ),
-                              ),
+                                  width: 900, height: 250, child: GraphCard()),
                             ],
                           ),
                         ),
@@ -117,7 +70,7 @@ class HomePage extends StatelessWidget {
                         Expanded(
                           flex: 1, // Takes 1 part of the screen
                           child: Container(
-                            height: 800,
+                            height: 1000,
                             width: 200,
                             decoration: BoxDecoration(
                                 color: const Color.fromARGB(255, 1, 22, 58)),
@@ -134,16 +87,30 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: 10),
-                                Container(
-                                    height: 150,
-                                    width: 150,
-                                    child: CalendarCard()),
+                                Expanded(
+                                  child: Container(
+                                    //margin: EdgeInsets.all(20),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 20),
+                                    child: CalendarCard(),
+                                  ),
+                                ),
                                 SizedBox(height: 10),
-                                Container(
-                                    height: 150, width: 150, child: WishCard()),
+                                Flexible(
+                                  child: Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 20),
+                                    child: WishCard(),
+                                  ),
+                                ),
                                 SizedBox(height: 10),
-                                Container(
-                                    height: 150, width: 150, child: WishCard()),
+                                Flexible(
+                                  child: Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 20),
+                                    child: WishCard(),
+                                  ),
+                                ),
                               ],
                             ),
                           ),

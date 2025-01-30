@@ -4,16 +4,18 @@ class WishCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 200,
+      width: 350,
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Color(0xFF1D1F50), // Dark blue background
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "✨ Anniversary",
@@ -23,11 +25,13 @@ class WishCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(width: 5),
               Icon(Icons.star, color: Colors.yellowAccent),
             ],
           ),
           SizedBox(height: 10),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildAvatar('assets/user1.png'),
               _buildAvatar('assets/user2.png'),
@@ -36,8 +40,8 @@ class WishCard extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            "Total | 3",
-            style: TextStyle(color: Colors.white70, fontSize: 14),
+            "Total  | 3 |",
+            style: TextStyle(color: Colors.white70, fontSize: 20),
           ),
           SizedBox(height: 10),
           ElevatedButton(
@@ -50,7 +54,8 @@ class WishCard extends StatelessWidget {
             onPressed: () {
               print("Anniversary Wishes Clicked!");
             },
-            child: Text("🎉 Anniversary Wishing"),
+            child: Text("🎉 Anniversary Wishing",
+                style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
