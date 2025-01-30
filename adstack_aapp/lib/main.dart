@@ -1,9 +1,9 @@
-import 'package:adstack_aapp/attendance.dart';
-import 'package:adstack_aapp/employees.dart';
-import 'package:adstack_aapp/home.dart';
-import 'package:adstack_aapp/info.dart';
-import 'package:adstack_aapp/navigation.dart';
-import 'package:adstack_aapp/summary.dart';
+import 'package:adstack_aapp/Screen/attendance.dart';
+import 'package:adstack_aapp/Screen/employees.dart';
+import 'package:adstack_aapp/Screen/home.dart';
+import 'package:adstack_aapp/Screen/info.dart';
+import 'package:adstack_aapp/Screen/navigation.dart';
+import 'package:adstack_aapp/Screen/summary.dart';
 import 'package:flutter/material.dart';
 
 void main() {
